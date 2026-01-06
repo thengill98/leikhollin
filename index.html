@@ -6,7 +6,7 @@
   <title>Leikhöllin – Community Built Play Hall</title>
   <meta name="description" content="A community-built indoor play hall for children in Vestmannaeyjar, Iceland." />
 
-  <!-- Icons -->
+  <!-- Icons (Facebook/Instagram/Mail) -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
@@ -41,6 +41,10 @@
       font-size: 1.05em;
     }
 
+    a {
+      color: inherit;
+    }
+
     .hero {
       text-align: center;
       padding-bottom: 30px;
@@ -70,6 +74,7 @@
       text-decoration: none;
       font-size: 1em;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
+      color: #fff;
     }
 
     .btn:hover {
@@ -79,22 +84,31 @@
 
     .btn-support {
       background: #ff7a00;
-      color: #fff;
     }
 
     .btn-mail {
       background: #4caf50;
-      color: #fff;
     }
 
     .btn-facebook {
       background: #1877f2;
-      color: #fff;
     }
 
     .btn-instagram {
       background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
-      color: #fff;
+    }
+
+    .play-image {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .play-image img {
+      max-width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      display: block;
+      margin: 0 auto;
     }
 
     .card {
@@ -106,6 +120,7 @@
 
     ul {
       padding-left: 20px;
+      margin: 0;
     }
 
     .footer {
@@ -141,7 +156,7 @@
         <a class="btn btn-mail"
            href="mailto:leikhollin@gmail.com">
           <i class="fa-solid fa-envelope"></i>
-          Contact us
+          Email
         </a>
 
         <a class="btn btn-facebook"
@@ -159,6 +174,11 @@
         </a>
       </div>
     </section>
+
+    <!-- IMAGE -->
+    <div class="play-image">
+      <img src="softplay-banner.png" alt="Indoor soft play area for Leikhöllin">
+    </div>
 
     <!-- WHY -->
     <section class="card">
@@ -178,6 +198,15 @@
         <li>Strong community involvement</li>
         <li>Active local fundraising</li>
       </ul>
+    </section>
+
+    <!-- GET INVOLVED -->
+    <section class="card">
+      <h2>Get involved</h2>
+      <p>
+        If you want to support, sponsor, or partner with Leikhöllin, reach out:
+        <a href="mailto:leikhollin@gmail.com"><strong>leikhollin@gmail.com</strong></a>
+      </p>
     </section>
 
     <!-- FOOTER -->
