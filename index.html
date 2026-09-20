@@ -1,276 +1,3 @@
-<!DOCTYPE html>
-<html lang="is">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leikhöllin – Samfélagsdrifið innanhúss leiksvæði</title>
-  <meta name="description" content="Leikhöllin er samfélagsdrifið innanhúss leiksvæði fyrir börn og fjölskyldur í Vestmannaeyjum." />
-
-  <!-- Icons (Facebook/Instagram/Mail) -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-  <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      margin: 0;
-      background: linear-gradient(180deg, #fff6ea, #f4f7fb);
-      color: #333;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 40px 24px;
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-    }
-
-    h1 {
-      font-size: 2.6em;
-      margin: 0 0 0.3em 0;
-    }
-
-    h2 {
-      margin-top: 2.2em;
-      font-size: 1.6em;
-    }
-
-    p {
-      font-size: 1.05em;
-      margin: 0.8em 0;
-    }
-
-    .hero {
-      text-align: center;
-      padding-bottom: 22px;
-      border-bottom: 2px dashed #ffd39a;
-    }
-
-    .hero span {
-      color: #ff7a00;
-      font-weight: bold;
-    }
-
-    .lang-switch {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-    }
-
-    .lang-switch button {
-      background: #f1f3f5;
-      border: 1px solid #e5e7eb;
-      padding: 8px 14px;
-      border-radius: 999px;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 0.95em;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .lang-switch button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.10);
-    }
-
-    .lang-switch button.active {
-      background: #111827;
-      color: #fff;
-      border-color: #111827;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-      margin-top: 18px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 1em;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-      color: #fff;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .btn-support { background: #ff7a00; }
-    .btn-mail { background: #4caf50; }
-    .btn-facebook { background: #1877f2; }
-    .btn-instagram { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); }
-
-    /* HERO BANNER (full-width inside the card) */
-    .banner {
-      margin: 26px -24px 10px;
-      overflow: hidden;
-      position: relative;
-      border-radius: 14px;
-    }
-
-    .banner img {
-      width: 100%;
-      height: 240px;
-      object-fit: cover;
-      display: block;
-      filter: saturate(1.05) contrast(1.02);
-    }
-
-    .banner:after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.0), rgba(255,255,255,0.35));
-      pointer-events: none;
-    }
-
-    @media (min-width: 768px) {
-      .banner img {
-        height: 320px;
-      }
-    }
-
-    .card {
-      background: #f9fafc;
-      padding: 24px;
-      border-radius: 14px;
-      margin-top: 20px;
-    }
-
-    ul {
-      padding-left: 20px;
-      margin: 0.6em 0 0 0;
-    }
-
-    /* WHY grid (added) */
-    .why-grid{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 14px;
-    }
-    .why-box{
-      background: #ffffff;
-      border: 1px solid #eef2f7;
-      border-radius: 12px;
-      padding: 16px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.04);
-    }
-    .why-box h3{
-      margin: 0 0 10px 0;
-      font-size: 1.1em;
-    }
-    .why-box ul{
-      margin: 0;
-    }
-    @media (max-width: 720px){
-      .why-grid{ grid-template-columns: 1fr; }
-    }
-
-    .footer {
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid #eee;
-      text-align: center;
-      font-size: 0.9em;
-      color: #666;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-
-    <!-- HERO -->
-    <section class="hero">
-
-      <!-- Language toggle -->
-      <div class="lang-switch">
-        <button id="btn-is" type="button" onclick="setLang('is')">🇮🇸 Íslenska</button>
-        <button id="btn-en" type="button" onclick="setLang('en')">🇬🇧 English</button>
-      </div>
-
-      <h1 data-is="Leikhöllin" data-en="Leikhöllin">Leikhöllin</h1>
-
-      <p data-is="Samfélagsdrifið innanhúss leiksvæði fyrir börn og fjölskyldur í Vestmannaeyjum."
-         data-en="A community-built indoor play hall for children and families in Vestmannaeyjar, Iceland.">
-        Samfélagsdrifið innanhúss leiksvæði fyrir börn og fjölskyldur í Vestmannaeyjum.
-      </p>
-
-      <p data-is="Við erum að skapa varanlegt og öruggt rými þar sem börn geta leikið sér allt árið — líka á dimmum og stormasömum dögum."
-         data-en="We are creating a permanent, safe place where children can play year-round — even through long, dark, stormy seasons.">
-        Við erum að skapa varanlegt og öruggt rými þar sem börn geta leikið sér allt árið — líka á dimmum og stormasömum dögum.
-      </p>
-
-      <div class="buttons">
-        <a class="btn btn-support"
-           href="https://www.karolinafund.com/project/view/6654"
-           target="_blank" rel="noopener"
-           data-is="Styrkja verkefnið" data-en="Support the project">
-          <i class="fa-solid fa-heart"></i>
-          <span data-is="Styrkja verkefnið" data-en="Support the project">Styrkja verkefnið</span>
-        </a>
-
-        <a class="btn btn-mail"
-           href="mailto:leikhollin@leikhollin.is">
-          <i class="fa-solid fa-envelope"></i>
-          <span data-is="Tölvupóstur" data-en="Email">Tölvupóstur</span>
-        </a>
-
-        <a class="btn btn-facebook"
-           href="https://facebook.com/LEIKHOLLIN"
-           target="_blank" rel="noopener">
-          <i class="fa-brands fa-facebook-f"></i>
-          <span data-is="Facebook" data-en="Facebook">Facebook</span>
-        </a>
-
-        <a class="btn btn-instagram"
-           href="https://instagram.com/LEIKHOLLIN"
-           target="_blank" rel="noopener">
-          <i class="fa-brands fa-instagram"></i>
-          <span data-is="Instagram" data-en="Instagram">Instagram</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- BANNER (full width) -->
-    <div class="banner">
-      <img src="softplay-banner.png" alt="Leikhöllin soft play">
-    </div>
-
-    <!-- WHY (updated text + grid, no dramatics) -->
-    <section class="card" id="af-hverju">
-      <h2 data-is="Af hverju þetta skiptir máli" data-en="Why it matters">Af hverju þetta skiptir máli</h2>
-
-      <p data-is="Vestmannaeyjar eru eyjasamfélag með langan vetur og takmarkaða innanhúss afþreyingu fyrir börn. Leikhöllin bætir við öruggu heilsárs rými þar sem börn geta leikið og hreyft sig óháð veðri."
-         data-en="Vestmannaeyjar is an island community with long winters and limited indoor options for children. Leikhöllin adds a safe year-round space where children can play and be active regardless of weather.">
-        Vestmannaeyjar eru eyjasamfélag með langan vetur og takmarkaða innanhúss afþreyingu fyrir börn. Leikhöllin bætir við öruggu heilsárs rými þar sem börn geta leikið og hreyft sig óháð veðri.
-      </p>
-
-      <div class="why-grid">
-        <div class="why-box">
-          <h3 data-is="Hreyfing og þroski" data-en="Movement and development">Hreyfing og þroski</h3>
-          <ul>
-            <li data-is="Regluleg hreyfing óháð veðri" data-en="Regular activity regardless of weather">
-              Regluleg hreyfing óháð veðri
-            </li>
-            <li data-is="Leikur styður líkamlegan og félagslegan þroska" data-en="Play supports physical and social development">
-              Leikur styður líkamlegan og félagslegan þroska
-            </li>
           </ul>
         </div>
 
@@ -312,28 +39,31 @@
       </div>
     </section>
 
-    <!-- STATUS -->
+    <!-- WHAT IS IN PLACE -->
     <section class="card">
       <h2 data-is="Hvað er nú þegar til staðar" data-en="What already exists">Hvað er nú þegar til staðar</h2>
       <ul>
         <li data-is="Kjarnabúnaður (leikgrind) er tryggður" data-en="Core indoor play equipment secured">
           Kjarnabúnaður (leikgrind) er tryggður
         </li>
-        <li data-is="Sterk þátttaka og stuðningur úr samfélaginu" data-en="Strong community involvement">
-          Sterk þátttaka og stuðningur úr samfélaginu
+        <li data-is="Karolina-söfnunin náði markmiði sínu" data-en="The Karolina fundraising campaign reached its goal">
+          Karolina-söfnunin náði markmiði sínu
         </li>
-        <li data-is="Söfnun og uppbygging í fullum gangi" data-en="Active local fundraising">
-          Söfnun og uppbygging í fullum gangi
+        <li data-is="Fundað hefur verið með bæjarráði Vestmannaeyja um næstu skref" data-en="The next steps have been discussed with the Vestmannaeyjar town council">
+          Fundað hefur verið með bæjarráði Vestmannaeyja um næstu skref
+        </li>
+        <li data-is="Unnið er að því að finna hentuga lóð fyrir nægilega stórt húsnæði með góðri lofthæð" data-en="Work continues to find a suitable site for a sufficiently large building with good ceiling height">
+          Unnið er að því að finna hentuga lóð fyrir nægilega stórt húsnæði með góðri lofthæð
         </li>
       </ul>
     </section>
 
     <!-- GET INVOLVED -->
     <section class="card">
-      <h2 data-is="Taktu þátt" data-en="Get involved">Taktu þátt</h2>
-      <p data-is="Viltu styrkja, styðja, vera samstarfsaðili eða hjálpa með efni/þjónustu? Sendu okkur línu:"
-         data-en="Want to support, sponsor, partner, or donate materials/services? Send us a message:">
-        Viltu styrkja, styðja, vera samstarfsaðili eða hjálpa með efni/þjónustu? Sendu okkur línu:
+      <h2 data-is="Vertu í sambandi" data-en="Get in touch">Vertu í sambandi</h2>
+      <p data-is="Ertu með hugmynd, hentugt rými eða möguleika á samstarfi sem gæti hjálpað verkefninu áfram? Sendu okkur línu:"
+         data-en="Do you have an idea, a suitable space or a partnership opportunity that could help move the project forward? Send us a message:">
+        Ertu með hugmynd, hentugt rými eða möguleika á samstarfi sem gæti hjálpað verkefninu áfram? Sendu okkur línu:
       </p>
       <p>
         <a href="mailto:leikhollin@leikhollin.is"><strong>leikhollin@leikhollin.is</strong></a>
